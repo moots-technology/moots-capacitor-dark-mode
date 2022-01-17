@@ -1,81 +1,36 @@
 package com.bkon.capacitor.DarkMode;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.res.Configuration;
-import android.util.Log;
+import android.webkit.WebSettings;
+import androidx.webkit.WebSettingsCompat;
+import androidx.webkit.WebViewFeature;
+import com.getcapacitor.Bridge;
 
-import com.bkon.capacitor.DarkMode.capacitordarkmode.R;
-import com.getcapacitor.JSObject;
-import com.getcapacitor.Plugin;
-import com.getcapacitor.PluginCall;
-import com.getcapacitor.PluginMethod;
-import com.getcapacitor.annotation.CapacitorPlugin;
+public class DarkMode {
 
-import org.json.JSONException;
+    private Context context;
+    private Bridge bridge;
 
-@CapacitorPlugin(name = "DarkMode")
-public class DarkMode extends Plugin {
-
-    private boolean isDarkModeOn = false;
-    private static final String EVENT_DARK_MODE_CHANGE = "darkModeStateChanged";
-
-    @Override
-    protected void handleOnRestart() {
-        super.handleOnRestart();
-        Log.i("capacitor","restarted");
-        notifyWeb();
+    DarkMode(Context context, Bridge bridge) {
+        this.context = context;
+        this.bridge = bridge;
     }
 
-    @Override
-    protected void handleOnResume() {
-        super.handleOnResume();
-        Log.i("capacitor","resumed");
-        notifyWeb();
-    }
+    @SuppressLint("RestrictedApi")
+    public void syncDarkMode() {
+        WebSettings settings = bridge.getWebView().getSettings();
 
-    public void notifyWeb() {
-        JSObject data = checkMode();
-        try {
-            if (data.getBoolean("isDarkModeOn")) {
-                getBridge().getActivity().getWindow()
-                        .setNavigationBarColor(getBridge().getActivity().getResources().getColor(R.color.black));
-            }
-        } catch (JSONException e) {
-            e.printStackTrace();
+        if (WebViewFeature.isFeatureSupported(WebViewFeature.FORCE_DARK)) {
+            int nightMode = context.getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK;
+            boolean isNightModeEnabled = nightMode == Configuration.UI_MODE_NIGHT_YES;
+            int forceDarkMode = (isNightModeEnabled ? WebSettingsCompat.FORCE_DARK_ON : WebSettingsCompat.FORCE_DARK_OFF);
+            WebSettingsCompat.setForceDark(settings, forceDarkMode);
         }
-        Log.i("capacitor",data.getString("isDarkModeOn"));
-        notifyListeners(this.EVENT_DARK_MODE_CHANGE, data, true);
-    }
 
-    @PluginMethod()
-    public void isDarkModeOn(PluginCall call) {
-        JSObject data = checkMode();
-        call.success(data);
-    }
-
-    public JSObject checkMode() {
-        Context ctx = getContext();
-        JSObject data = new JSObject();
-
-        int nightModeFlags = ctx.getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK;
-        switch (nightModeFlags) {
-            case Configuration.UI_MODE_NIGHT_YES:
-                isDarkModeOn = true;
-                data.put("isDarkModeOn", isDarkModeOn);
-                break;
-
-            case Configuration.UI_MODE_NIGHT_NO:
-                isDarkModeOn = false;
-                data = new JSObject();
-                data.put("isDarkModeOn", isDarkModeOn);
-                break;
-
-            case Configuration.UI_MODE_NIGHT_UNDEFINED:
-                isDarkModeOn = false;
-                data = new JSObject();
-                data.put("isDarkModeOn", isDarkModeOn);
-                break;
+        if (WebViewFeature.isFeatureSupported(WebViewFeature.FORCE_DARK_STRATEGY)) {
+            WebSettingsCompat.setForceDarkStrategy(settings, WebSettingsCompat.WEB_THEME_DARKENING_ONLY);
         }
-        return data;
     }
 }

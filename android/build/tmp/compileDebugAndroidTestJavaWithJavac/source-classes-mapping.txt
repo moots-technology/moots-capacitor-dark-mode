@@ -1,0 +1,4 @@
+com/bkon/capacitor/DarkMode/capacitordarkmode/test/BuildConfig.java
+ com.bkon.capacitor.DarkMode.capacitordarkmode.test.BuildConfig
+com/getcapacitor/android/ExampleInstrumentedTest.java
+ com.getcapacitor.android.ExampleInstrumentedTest
