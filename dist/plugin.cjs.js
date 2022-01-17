@@ -1,5 +1,14 @@
-import { WebPlugin } from '@capacitor/core';
-export class DarkModeWeb extends WebPlugin {
+'use strict';
+
+Object.defineProperty(exports, '__esModule', { value: true });
+
+var core = require('@capacitor/core');
+
+const DarkMode = core.registerPlugin('DarkMode', {
+    web: () => Promise.resolve().then(function () { return web; }).then(m => new m.DarkModeWeb()),
+});
+
+class DarkModeWeb extends core.WebPlugin {
     constructor() {
         super({
             name: 'DarkMode',
@@ -27,4 +36,11 @@ export class DarkModeWeb extends WebPlugin {
         });
     }
 }
-//# sourceMappingURL=web.js.map
+
+var web = /*#__PURE__*/Object.freeze({
+    __proto__: null,
+    DarkModeWeb: DarkModeWeb
+});
+
+exports.DarkMode = DarkMode;
+//# sourceMappingURL=plugin.cjs.js.map

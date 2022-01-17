@@ -8,5 +8,3 @@ export declare class DarkModeWeb extends WebPlugin implements DarkModePlugin {
     isDarkModeOn(): Promise<any>;
     registerDarkModeChangeListener(): void;
 }
-declare const DarkMode: DarkModeWeb;
-export { DarkMode };

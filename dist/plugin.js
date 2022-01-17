@@ -1,6 +1,10 @@
 var capacitorPlugin = (function (exports, core) {
     'use strict';
 
+    const DarkMode = core.registerPlugin('DarkMode', {
+        web: () => Promise.resolve().then(function () { return web; }).then(m => new m.DarkModeWeb()),
+    });
+
     class DarkModeWeb extends core.WebPlugin {
         constructor() {
             super({
@@ -29,13 +33,17 @@ var capacitorPlugin = (function (exports, core) {
             });
         }
     }
-    const DarkMode = new DarkModeWeb();
-    core.registerWebPlugin(DarkMode);
+
+    var web = /*#__PURE__*/Object.freeze({
+        __proto__: null,
+        DarkModeWeb: DarkModeWeb
+    });
 
     exports.DarkMode = DarkMode;
-    exports.DarkModeWeb = DarkModeWeb;
+
+    Object.defineProperty(exports, '__esModule', { value: true });
 
     return exports;
 
-}({}, capacitorExports));
+})({}, capacitorExports);
 //# sourceMappingURL=plugin.js.map
