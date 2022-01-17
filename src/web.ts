@@ -37,9 +37,3 @@ export class DarkModeWeb extends WebPlugin implements DarkModePlugin {
   }
 }
 
-const DarkMode = new DarkModeWeb();
-
-export { DarkMode };
-
-import { registerWebPlugin } from '@capacitor/core';
-registerWebPlugin(DarkMode);
