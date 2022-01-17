@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<module external.linked.project.id=":capacitor-dark-mode" external.linked.project.path="$MODULE_DIR$" external.root.project.path="$MODULE_DIR$/../../../android" external.system.id="GRADLE" type="JAVA_MODULE" version="4">
+<module external.linked.project.id=":moots-capacitor-dark-mode" external.linked.project.path="$MODULE_DIR$" external.root.project.path="$MODULE_DIR$/../../../android" external.system.id="GRADLE" type="JAVA_MODULE" version="4">
   <component name="FacetManager">
     <facet type="android-gradle" name="Android-Gradle">
       <configuration>
-        <option name="GRADLE_PROJECT_PATH" value=":capacitor-dark-mode" />
+        <option name="GRADLE_PROJECT_PATH" value=":moots-capacitor-dark-mode" />
         <option name="LAST_SUCCESSFUL_SYNC_AGP_VERSION" value="3.6.2" />
         <option name="LAST_KNOWN_AGP_VERSION" value="3.6.2" />
       </configuration>
