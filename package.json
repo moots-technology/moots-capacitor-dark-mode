@@ -1,12 +1,35 @@
 {
   "name": "moots-capacitor-dark-mode",
-  "version": "1.0.1",
-  "description": "Handle Dark mode changes on android and iOS",
-  "main": "dist/plugin.js",
+  "version": "1.0.0",
+  "description": "Enables the correct behavior of the `prefers-color-scheme` CSS media feature on Android, iOS",
+  "main": "dist/plugin.cjs.js",
   "module": "dist/esm/index.js",
   "types": "dist/esm/index.d.ts",
+  "unpkg": "dist/plugin.js",
+  "files": [
+    "android/src/main/",
+    "android/build.gradle",
+    "dist/",
+    "ios/Plugin/",
+    "CapacitorDarkMode.podspec"
+  ],
+  "author": "moots-technology",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/moots-technology/capacitor-dark-mode.git"
+  },
+  "bugs": {
+    "url": "https://github.com/moots-technology/capacitor-dark-mode/issues"
+  },
   "scripts": {
-    "lint": "npm run prettier -- --check && npm run swiftlint -- lint",
+    "verify": "npm run verify:ios && npm run verify:android && npm run verify:web",
+    "verify:ios": "cd ios && pod install && xcodebuild -workspace Plugin.xcworkspace -scheme Plugin && cd ..",
+    "verify:android": "cd android && ./gradlew clean build test && cd ..",
+    "verify:web": "npm run build",
+    "lint": "npm run eslint && npm run prettier -- --check && npm run swiftlint -- lint",
+    "fmt": "npm run eslint -- --fix && npm run prettier -- --write && npm run swiftlint -- --fix --format",
+    "eslint": "eslint . --ext ts",
     "prettier": "prettier \"**/*.{css,html,ts,js,java}\"",
     "swiftlint": "node-swiftlint",
     "build": "npm run clean && tsc && rollup -c rollup.config.js",
@@ -14,35 +37,30 @@
     "watch": "tsc --watch",
     "prepublishOnly": "npm run build"
   },
-  "author": "Hinddeep Shailesh Purohit",
-  "license": "MIT",
   "devDependencies": {
     "@capacitor/android": "^3.0.0",
     "@capacitor/core": "^3.0.0",
     "@capacitor/ios": "^3.0.0",
-    "@ionic/prettier-config": "^1.0.0",
-    "@ionic/swiftlint-config": "^1.0.0",
+    "@ionic/eslint-config": "^0.3.0",
+    "@ionic/prettier-config": "^1.0.1",
+    "@ionic/swiftlint-config": "^1.1.2",
     "@rollup/plugin-node-resolve": "^8.1.0",
+    "eslint": "^7.11.0",
     "prettier": "^2.0.5",
     "prettier-plugin-java": "^0.8.0",
-    "rimraf": "^3.0.0",
-    "rollup": "^2.21.0",
+    "rimraf": "^3.0.2",
+    "rollup": "^2.32.0",
     "swiftlint": "^1.0.1",
-    "typescript": "~3.8.3"
+    "typescript": "~4.0.3"
   },
   "peerDependencies": {
     "@capacitor/core": "^3.0.0"
   },
-  "files": [
-    "dist/",
-    "ios/",
-    "android/",
-    "CapacitorDarkMode.podspec"
-  ],
   "keywords": [
     "capacitor",
     "plugin",
-    "native"
+    "native",
+    "darkmode"
   ],
   "capacitor": {
     "ios": {
@@ -53,12 +71,5 @@
     }
   },
   "prettier": "@ionic/prettier-config",
-  "swiftlint": "@ionic/swiftlint-config",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/hinddeep/ionicCapacitorDarkMode"
-  },
-  "bugs": {
-    "url": "https://github.com/hinddeep/ionicCapacitorDarkMode/issues"
-  }
+  "swiftlint": "@ionic/swiftlint-config"
 }
