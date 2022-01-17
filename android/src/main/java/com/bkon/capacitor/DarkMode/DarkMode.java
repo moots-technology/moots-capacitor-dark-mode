@@ -6,14 +6,14 @@ import android.util.Log;
 
 import com.bkon.capacitor.DarkMode.capacitordarkmode.R;
 import com.getcapacitor.JSObject;
-import com.getcapacitor.NativePlugin;
 import com.getcapacitor.Plugin;
 import com.getcapacitor.PluginCall;
 import com.getcapacitor.PluginMethod;
+import com.getcapacitor.annotation.CapacitorPlugin;
 
 import org.json.JSONException;
 
-@NativePlugin()
+@CapacitorPlugin(name = "DarkMode")
 public class DarkMode extends Plugin {
 
     private boolean isDarkModeOn = false;
