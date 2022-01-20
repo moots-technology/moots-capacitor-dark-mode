@@ -1,6 +1,6 @@
 {
   "name": "moots-capacitor-dark-mode",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Enables the correct behavior of the `prefers-color-scheme` CSS media feature on Android, iOS",
   "main": "dist/plugin.cjs.js",
   "module": "dist/esm/index.js",
