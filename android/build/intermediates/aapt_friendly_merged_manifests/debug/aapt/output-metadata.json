@@ -4,7 +4,7 @@
     "type": "AAPT_FRIENDLY_MERGED_MANIFESTS",
     "kind": "Directory"
   },
-  "applicationId": "com.bkon.capacitor.DarkMode.capacitordarkmode",
+  "applicationId": "com.au.capacitor.darkmode",
   "variantName": "debug",
   "elements": [
     {

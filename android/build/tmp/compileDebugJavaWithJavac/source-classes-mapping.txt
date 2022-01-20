@@ -1,4 +1,6 @@
-com/bkon/capacitor/DarkMode/capacitordarkmode/BuildConfig.java
- com.bkon.capacitor.DarkMode.capacitordarkmode.BuildConfig
-com/bkon/capacitor/DarkMode/DarkMode.java
- com.bkon.capacitor.DarkMode.DarkMode
+com/au/capacitor/darkmode/BuildConfig.java
+ com.au.capacitor.darkmode.BuildConfig
+com/au/capacitor/darkmode/DarkModePlugin.java
+ com.au.capacitor.darkmode.DarkModePlugin
+com/au/capacitor/darkmode/DarkMode.java
+ com.au.capacitor.darkmode.DarkMode

@@ -1,4 +1,4 @@
-com.bkon.capacitor.DarkMode.capacitordarkmode.test
+com.au.capacitor.darkmode.test
 anim abc_fade_in
 anim abc_fade_out
 anim abc_grow_fade_in_from_bottom

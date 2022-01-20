@@ -4,7 +4,7 @@ ADDED from C:\Users\Frotty\Documents\GitHub\capacitor-dark-mode\android\src\main
 INJECTED from C:\Users\Frotty\Documents\GitHub\capacitor-dark-mode\android\src\main\AndroidManifest.xml:2:3-4:14
 INJECTED from C:\Users\Frotty\Documents\GitHub\capacitor-dark-mode\android\src\main\AndroidManifest.xml:2:3-4:14
 	package
-		ADDED from C:\Users\Frotty\Documents\GitHub\capacitor-dark-mode\android\src\main\AndroidManifest.xml:3:7-62
+		ADDED from C:\Users\Frotty\Documents\GitHub\capacitor-dark-mode\android\src\main\AndroidManifest.xml:3:7-42
 		INJECTED from C:\Users\Frotty\Documents\GitHub\capacitor-dark-mode\android\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\Frotty\Documents\GitHub\capacitor-dark-mode\android\src\main\AndroidManifest.xml
 	xmlns:android

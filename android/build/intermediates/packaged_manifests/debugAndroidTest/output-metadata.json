@@ -4,7 +4,7 @@
     "type": "PACKAGED_MANIFESTS",
     "kind": "Directory"
   },
-  "applicationId": "com.bkon.capacitor.DarkMode.capacitordarkmode.test",
+  "applicationId": "com.au.capacitor.darkmode.test",
   "variantName": "debugAndroidTest",
   "elements": [
     {
