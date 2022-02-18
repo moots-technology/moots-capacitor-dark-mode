@@ -1,10 +1,7 @@
-# About
-[moots technology](https://mootstech.com.au/) is an Adelaide, South Australia based consultancy and software development company with a huge expertise in usage requirements analysis and cloud architecture frameworks for creating modern software solutions. Hereby we prioritise high usability and amazing UX over adding further features.
-
 # Moots Capacitor Dark Mode
 
-This capacitor 3 plugin enables the correct behavior of the `prefers-color-scheme` CSS media feature for the ionic [Dark Mode](https://ionicframework.com/docs/theming/dark-mode) on Android and iOS devices without the need for configuration.
-The app will be styled depending on system theme selection. If the user selects dark mode, then the app will switch to dark mode and vice versa.
+This capacitor 3 plugin automatically changes the style of your app depending on system theme selection. If the user selects dark mode, then the app will switch to dark mode and vice versa.
+In detail it enables the correct behavior of the `prefers-color-scheme` CSS media feature for the ionic [Dark Mode](https://ionicframework.com/docs/theming/dark-mode) on Android and iOS devices without the need for configuration.
 
 # Installation
 
@@ -18,3 +15,5 @@ By default the ionic dark mode out of the box only works on web devices, because
 This plugin adds the native code neccessary to read the system's theme setting and set the media query inside the app approriately.
 Thus it will now match the system's selected theme. 
 
+# About Moots
+[moots technology](https://mootstech.com.au/) is an Adelaide, South Australia based consultancy and software development company with a huge expertise in usage requirements analysis and cloud architecture frameworks for creating modern software solutions. Hereby we prioritise high usability and amazing UX over adding further features.
