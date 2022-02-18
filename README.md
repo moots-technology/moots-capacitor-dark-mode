@@ -1,3 +1,4 @@
+[![Node.js CI](https://github.com/moots-technology/moots-capacitor-dark-mode/actions/workflows/node.js.yml/badge.svg)](https://github.com/moots-technology/moots-capacitor-dark-mode/actions/workflows/node.js.yml)
 # Moots Capacitor Dark Mode
 
 This capacitor 3 plugin automatically changes the style of your app depending on system theme selection. If the user selects dark mode, then the app will switch to dark mode and vice versa.
