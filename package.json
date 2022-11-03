@@ -11,7 +11,7 @@
     "android/build.gradle",
     "dist/",
     "ios/Plugin/",
-    "CapacitorDarkMode.podspec"
+    "MootsCapacitorDarkMode.podspec"
   ],
   "author": "moots-technology",
   "license": "MIT",
